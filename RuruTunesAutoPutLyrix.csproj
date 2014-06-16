@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" DefaultTargets="Build">
+  <PropertyGroup>
+    <ProjectType>local</ProjectType>
+    <ProjectVersion>7.10.377</ProjectVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E512255E-BF7F-4306-8EBE-6E371A28F749}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <AssemblyName>TagGuru</AssemblyName>
+    <OutputType>WinExe</OutputType>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>RuruTunesAutoPutLyrix.Program</StartupObject>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ItemGroup>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System" />
+    <Reference Include="Interop.iTunesLib">
+      <HintPath>ref\Interop.iTunesLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web" />
+    <Compile Include="AssemblyInfo.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\ManiaDB.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Sing8.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Coverholic.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\MNet.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Properties\Resources.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Evan.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\UtaMap.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\MassUpdater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RuruTunesAutoPutLyrix\DelegateAddRow.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\DelegateUpdateRow.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\SetSplitSize.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\SetStatus.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\SetProgress.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\SetCoverColumn.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Jieumai.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\LyricsUpdater.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\TagGuru.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RuruTunesAutoPutLyrix\CCMPiaCover.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\AutoUpdate.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\CCMPia.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\inMuz.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Gasazip.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\LyricWiki.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\SongResult.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\LyricsResult.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\SOTDResult.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\checkSongExistsCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\checkSongExistsCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\searchArtistsCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\searchArtistsCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\searchAlbumsCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\searchAlbumsCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\searchSongsCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\searchSongsCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getSOTDCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getSOTDCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getSongCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getSongCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getSongResultCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getSongResultCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getArtistCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getArtistCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getAlbumCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getAlbumCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getHometownCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\getHometownCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\postArtistCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\postArtistCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\postAlbumCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\postAlbumCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\postSongCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\postSongCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\postSong_flagsCompletedEventHandler.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\org\lyricwiki\postSong_flagsCompletedEventArgs.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Savior.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Properties\Settings.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Program.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\Settings.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\GuljaBada.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\ZzlZzl.cs" />
+    <Compile Include="RuruTunesAutoPutLyrix\AllCD.cs" />
+    <EmbeddedResource Include="RuruTunesAutoPutLyrix.MassUpdater.resources" />
+    <EmbeddedResource Include="RuruTunesAutoPutLyrix.Properties.Resources.resources" />
+    <EmbeddedResource Include="RuruTunesAutoPutLyrix.TagGuru.resources" />
+  </ItemGroup>
+</Project>
