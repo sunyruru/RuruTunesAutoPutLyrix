@@ -6,7 +6,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{E512255E-BF7F-4306-8EBE-6E371A28F749}</ProjectGuid>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <AssemblyName>TagGuru</AssemblyName>
+    <AssemblyName>RuruTunesAutoPutLyrix</AssemblyName>
     <OutputType>WinExe</OutputType>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
   </PropertyGroup>
@@ -31,6 +31,9 @@
   </PropertyGroup>
   <PropertyGroup>
     <StartupObject>RuruTunesAutoPutLyrix.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>RuruTunesLyrix</RootNamespace>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>

@@ -5,7 +5,7 @@
 [assembly: System.Runtime.CompilerServices.CompilationRelaxations(8)]
 [assembly: System.Runtime.InteropServices.ComVisible(false)]
 [assembly: System.Reflection.AssemblyDescription("iTunes에 가사 & 앨범 자동입력")]
-[assembly: System.Reflection.AssemblyFileVersion("1.0.0.0")]
+[assembly: System.Reflection.AssemblyFileVersion("1.0.0.1")]
 [assembly: System.Runtime.CompilerServices.RuntimeCompatibility(WrapNonExceptionThrows=true)]
 [assembly: System.Reflection.AssemblyTitle("RuruTunesAutoPutLyrix")]
 [assembly: System.Reflection.AssemblyCompany("i-ruru.com")]
