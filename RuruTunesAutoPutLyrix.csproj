@@ -37,6 +37,9 @@
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <ItemGroup>
+    <EmbeddedResource Include="RuruTunesAutoPutLyrix\TagGuru.resx">
+      <DependentUpon>TagGuru.cs</DependentUpon>
+    </EmbeddedResource>
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System" />

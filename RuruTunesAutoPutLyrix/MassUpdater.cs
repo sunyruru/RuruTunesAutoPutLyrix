@@ -1,6 +1,5 @@
 ﻿namespace RuruTunesAutoPutLyrix
 {
-    using iTunesLib;
     using System;
     using System.Collections;
     using System.ComponentModel;
@@ -9,6 +8,8 @@
     using System.Text.RegularExpressions;
     using System.Threading;
     using System.Windows.Forms;
+
+    using iTunesLib;
 
     public class MassUpdater : Form
     {
@@ -395,12 +396,12 @@
             this.Result.ReadOnly = true;
             this.Result.Width = 150;
             base.AutoScaleDimensions = new SizeF(7f, 12f);
-            base.AutoScaleMode = AutoScaleMode.Font;
+            //base.AutoScaleMode = AutoScaleMode.Font;
             base.ClientSize = new Size(0x30d, 0x2b8);
             base.Controls.Add(this.panel5);
             base.Controls.Add(this.imgFloat);
             base.Controls.Add(this.splitContainer1);
-            base.Icon = (Icon) manager.GetObject("$this.Icon");
+            //base.Icon = (Icon) manager.GetObject("$this.Icon");
             base.Name = "MassUpdater";
             base.ShowIcon = false;
             base.ShowInTaskbar = false;

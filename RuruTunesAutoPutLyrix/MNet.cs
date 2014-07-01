@@ -13,11 +13,15 @@
 
         public bool checkSongExists(string artist, string song)
         {
-            string uri = "http://search.mnet.com/search_SongName.asp";
-            string text = this.HttpPost(uri, "searchArea=SONG&searchWord=" + song + "&findWord=" + song);
+            //string uri = "http://search.mnet.com/search_SongName.asp";
+            string uri = "http://search.mnet.interest.me/song.asp";
+            //string text = this.HttpPost(uri, "searchArea=SONG&searchWord=" + song + "&findWord=" + song);
+            string text = this.HttpPost(uri, "q=" + song);
             if (text != null)
             {
-                foreach (string str3 in this.returnSubstrings(text, "javascript:fnArtistInfo2", "</a>"))
+                
+                //foreach (string str3 in this.returnSubstrings(text, "javascript:fnArtistInfo2", "</a>"))
+                foreach (string str3 in this.returnSubstrings(text, "<input type=\"checkbox\" name=\"songIdx\" ", "</tr>"))
                 {
                     if ((str3.Contains(artist) || str3.Contains(artist.Replace(" ", ""))) || (str3.Replace(" ", "").Contains(artist) || str3.Replace(" ", "").Contains(artist.Replace(" ", ""))))
                     {
@@ -28,14 +32,16 @@
                         return true;
                     }
                 }
-                string[] strArray2 = this.returnSubstrings(text, "PageNum=", " ");
+                //string[] strArray2 = this.returnSubstrings(text, "PageNum=", " ");
+                string[] strArray2 = this.returnSubstrings(text, "<a href=\" http://search.mnet.interest.me/song.asp?q=" + song + "&pNum=", " ");
                 if (strArray2.Length > 0)
                 {
                     int num = 0;
                     foreach (string str4 in strArray2)
                     {
-                        text = this.HttpPost(uri, "searchArea=SONG&searchWord=" + song + "&findWord=" + song + "&pageNum=" + str4);
-                        foreach (string str5 in this.returnSubstrings(text, "javascript:fnArtistInfo2", "</a>"))
+                        text = this.HttpPost(uri, "q=" + song + "&pNum=" + str4.Trim());
+                        //foreach (string str5 in this.returnSubstrings(text, "javascript:fnArtistInfo2", "</a>"))
+                        foreach (string str5 in this.returnSubstrings(text, "<input type=\"checkbox\" name=\"songIdx\" ", "</tr>"))
                         {
                             if ((str5.Contains(artist) || str5.Contains(artist.Replace(" ", ""))) || (str5.Replace(" ", "").Contains(artist) || str5.Replace(" ", "").Contains(artist.Replace(" ", ""))))
                             {
@@ -52,6 +58,9 @@
                         }
                     }
                 }
+
+                /// TODO: 작업 필요 2014-07-02
+
                 uri = "http://search.mnet.com/search_SongSinger.asp";
                 text = this.HttpPost(uri, "searchArea=SONG&searchWord=" + artist + "&findWord=" + artist);
                 if (text == null)
@@ -98,6 +107,7 @@
 
         public string getSong(string artist, string song)
         {
+            /// TODO: 노래 가져오기 작업
             string uri = "http://search.mnet.com/search_SongName.asp";
             string text = this.HttpPost(uri, "searchArea=SONG&searchWord=" + song + "&findWord=" + song);
             string[] strArray = this.returnSubstrings(text, "name=\"CheckSongID\"", "title=\"가사\"");
@@ -212,6 +222,7 @@
         private string HttpPost(string uri, string parameters)
         {
             WebRequest request = WebRequest.Create(uri);
+            
             request.ContentType = "application/x-www-form-urlencoded";
             request.Method = "POST";
             byte[] buffer = this.eucme(parameters);
@@ -239,7 +250,7 @@
                 {
                     return null;
                 }
-                StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("EUC-KR"));
+                StreamReader reader = new StreamReader(response.GetResponseStream(), Encoding.GetEncoding("UTF-8"));
                 string str = reader.ReadToEnd().Trim();
                 reader.Close();
                 response.Close();
